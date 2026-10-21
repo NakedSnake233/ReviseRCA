@@ -1,0 +1,20 @@
+\begin{table}[tbp]
+\caption{Exploratory mixed-cohort retraining on fixed seed 42. Each entry is original T-only training $\rightarrow$ mixed training, evaluated on exactly the same cases (Hit@1, percent). T columns retain the original 45/42 test incidents; C columns use 15 held-out C1--C5 controls per application. All methods share the cohort and evidence; settings are unchanged. Controls are grouped by focal service across modes, repetitions, decoys and copies; C6 is excluded from ranking. This post-hoc comparison is not an independent confirmation set.}
+\label{tab:mixed_cohort}
+\resultstable
+\begin{tabularx}{\linewidth}{@{}lYYYY@{}}
+\toprule
+Method & OB T & OB C & TT T & TT C\\
+\midrule
+NSigma-Dyn & $95.56\!\rightarrow\!95.56$ & $0.00\!\rightarrow\!0.00$ & $97.62\!\rightarrow\!97.62$ & $0.00\!\rightarrow\!0.00$\\
+BARO-Dyn & $64.44\!\rightarrow\!64.44$ & $0.00\!\rightarrow\!0.00$ & $38.10\!\rightarrow\!38.10$ & $0.00\!\rightarrow\!0.00$\\
+CIRCA-Dyn & $84.44\!\rightarrow\!84.44$ & $0.00\!\rightarrow\!0.00$ & $95.24\!\rightarrow\!97.62$ & $0.00\!\rightarrow\!0.00$\\
+CloudRanger-Dyn & $64.44\!\rightarrow\!64.44$ & $0.00\!\rightarrow\!0.00$ & $0.00\!\rightarrow\!0.00$ & $0.00\!\rightarrow\!0.00$\\
+Eadro-Dyn & $100.00\!\rightarrow\!100.00$ & $0.00\!\rightarrow\!0.00$ & $100.00\!\rightarrow\!80.95$ & $0.00\!\rightarrow\!0.00$\\
+HolisticRCA-Dyn & $100.00\!\rightarrow\!100.00$ & $0.00\!\rightarrow\!0.00$ & $100.00\!\rightarrow\!95.24$ & $0.00\!\rightarrow\!0.00$\\
+Change-only & $100.00\!\rightarrow\!100.00$ & $0.00\!\rightarrow\!0.00$ & $100.00\!\rightarrow\!100.00$ & $0.00\!\rightarrow\!0.00$\\
+Node-only & $100.00\!\rightarrow\!100.00$ & $0.00\!\rightarrow\!0.00$ & $100.00\!\rightarrow\!100.00$ & $0.00\!\rightarrow\!0.00$\\
+DY-RCA & $100.00\!\rightarrow\!93.33$ & $0.00\!\rightarrow\!6.67$ & $100.00\!\rightarrow\!100.00$ & $0.00\!\rightarrow\!0.00$\\
+\bottomrule
+\end{tabularx}
+\end{table}

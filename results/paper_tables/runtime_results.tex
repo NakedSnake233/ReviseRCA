@@ -1,0 +1,16 @@
+\begin{table}[tbp]
+\caption{Measured CPU execution costs in milliseconds: one thread, ten cases, five warmups and twenty repetitions per case (200 samples per operation). Reconstruction excludes a graph cache but follows file-cache warmup; it is not a fresh-process/OS cold start. Cached inference receives an already tensorized input. Preview excludes proposal preparation; accept and conflict include state persistence. Train Ticket collection may run concurrently. All five Online Boutique boundaries are measured.}
+\label{tab:runtime_results}
+\resultstable
+\begin{tabularx}{\linewidth}{@{}Yrrrr@{}}
+\toprule
+Operation & OB P50 & OB P95 & TT P50 & TT P95\\
+\midrule
+Uncached graph rebuild (warm files) & \Result{ob.latency_cold_p50} & \Result{ob.latency_cold_p95} & \Result{tt.latency_cold_p50} & \Result{tt.latency_cold_p95}\\
+Cached scorer inference & \Result{ob.latency_infer_p50} & \Result{ob.latency_infer_p95} & \Result{tt.latency_infer_p50} & \Result{tt.latency_infer_p95}\\
+Hypothetical preview & \Result{ob.latency_preview_p50} & \Result{ob.latency_preview_p95} & \Result{tt.latency_preview_p50} & \Result{tt.latency_preview_p95}\\
+Accepted reconstruction + scoring & \Result{ob.latency_accept_p50} & \Result{ob.latency_accept_p95} & \Result{tt.latency_accept_p50} & \Result{tt.latency_accept_p95}\\
+Failed-conflict replay & \Result{ob.latency_conflict_p50} & \Result{ob.latency_conflict_p95} & \Result{tt.latency_conflict_p50} & \Result{tt.latency_conflict_p95}\\
+\bottomrule
+\end{tabularx}
+\end{table}

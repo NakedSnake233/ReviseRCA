@@ -1,0 +1,45 @@
+{
+  "snapshot": "2026-10-21",
+  "tests": {
+    "tests": 240,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "smoke": {
+    "incidents": 1,
+    "status": "complete",
+    "data": "examples/synthetic",
+    "planner": "rule",
+    "seed": 42,
+    "max_rows": 100,
+    "checkpoint": null
+  },
+  "source_files_verified": 251,
+  "source_mutations": 0,
+  "credential_pattern_findings": 0,
+  "secret_scan_scope": "text files only; private-key and common credential token patterns; manual placeholder review; no claim of exhaustive secret detection",
+  "python": "3.10.4",
+  "dependencies": {
+    "torch": "2.6.0+cu124",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "requests": "2.32.5",
+    "httpx": "0.28.1",
+    "PyYAML": "6.0.3"
+  },
+  "test_harness": {
+    "pytest": "9.0.3",
+    "jsonschema": "4.26.0",
+    "dependency_source": "existing local environment plus supplemental dependency directory; no clean network install performed"
+  },
+  "exclusions": [
+    "raw telemetry",
+    "large graph caches",
+    "trained checkpoints",
+    "private environment/configuration",
+    "third-party repository clones",
+    "manuscript drafts"
+  ],
+  "whitespace_note": "Original source trailing blank lines and original CSV CRLF are retained to preserve hashes."
+}

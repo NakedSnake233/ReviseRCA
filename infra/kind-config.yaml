@@ -1,0 +1,23 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: fault-exp
+# 1 control-plane + 2 worker nodes
+# This allows pod scheduling across nodes to observe topology changes
+nodes:
+  - role: control-plane
+    # Expose key services to the host
+    extraPortMappings:
+      - containerPort: 30000   # Grafana
+        hostPort: 30000
+        protocol: TCP
+      - containerPort: 30001   # Locust Web UI
+        hostPort: 30001
+        protocol: TCP
+      - containerPort: 30080   # Online Boutique frontend
+        hostPort: 30080
+        protocol: TCP
+      - containerPort: 30082   # TrainTicket UI
+        hostPort: 30082
+        protocol: TCP
+  - role: worker
+  - role: worker

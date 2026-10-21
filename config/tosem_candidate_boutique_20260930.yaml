@@ -1,0 +1,222 @@
+observability:
+  loki_url: http://localhost:3100
+  prom_url: http://localhost:9090
+  tempo_url: http://localhost:3200
+output:
+  data_dir: data/experiments_tosem_candidate_boutique_20260930
+  log_file: data/experiments_tosem_candidate_boutique_20260930/batch.log
+  summary_file: data/experiments_tosem_candidate_boutique_20260930/batch_summary.json
+scenarios:
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  description: HPA弹性扩缩容 (CPU压力触发)
+  id: T1
+  name: hpa_scale
+  param_sets:
+  - cpu_load: 60
+    cpu_workers: 2
+  - cpu_load: 80
+    cpu_workers: 4
+  - cpu_load: 70
+    cpu_workers: 3
+  - cpu_load: 90
+    cpu_workers: 6
+  script: faults/T1_hpa_scale.sh
+  targets:
+  - productcatalogservice
+  - cartservice
+  - checkoutservice
+  - recommendationservice
+  - currencyservice
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  description: Pod重建 / 节点漂移
+  id: T2
+  name: pod_drift
+  param_sets:
+  - kill_count: 1
+  - kill_count: 2
+  - kill_count: 1
+  script: faults/T2_pod_drift.sh
+  targets:
+  - checkoutservice
+  - recommendationservice
+  - productcatalogservice
+  - currencyservice
+  - shippingservice
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  description: Service Selector 标签投毒 (依赖边错误重定向)
+  id: T3
+  name: selector_poison
+  param_sets:
+  - poison_target: cartservice
+    variant: redirect
+  - poison_target: checkoutservice
+    variant: redirect
+  - poison_target: ''
+    variant: empty
+  - poison_target: emailservice
+    variant: redirect
+  script: faults/T3_selector_poison.sh
+  targets:
+  - productcatalogservice
+  - recommendationservice
+  - checkoutservice
+  - currencyservice
+  - shippingservice
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  description: Canary金丝雀发布 (版本共存+不对称故障)
+  id: T4
+  name: canary_release
+  param_sets:
+  - abort_pct: 20
+    delay_ms: 200
+    v2_weight: 30
+  - abort_pct: 30
+    delay_ms: 500
+    v2_weight: 50
+  - abort_pct: 10
+    delay_ms: 100
+    v2_weight: 20
+  - abort_pct: 25
+    delay_ms: 300
+    v2_weight: 40
+  - abort_pct: 50
+    delay_ms: 1000
+    v2_weight: 10
+  script: faults/T4_canary.sh
+  targets:
+  - recommendationservice
+  - productcatalogservice
+  - checkoutservice
+  - currencyservice
+  - shippingservice
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  id: C1
+  name: counterfactual_decoy_scale
+  param_sets:
+  - decoy: auto
+    decoy2: auto
+    delay_ms: 150
+    mode: scale
+  script: faults/C_decoy_control.sh
+  targets:
+  - productcatalogservice
+  - cartservice
+  - checkoutservice
+  - recommendationservice
+  - currencyservice
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  id: C2
+  name: counterfactual_decoy_drift
+  param_sets:
+  - decoy: auto
+    decoy2: auto
+    delay_ms: 150
+    mode: drift
+  script: faults/C_decoy_control.sh
+  targets:
+  - productcatalogservice
+  - cartservice
+  - checkoutservice
+  - recommendationservice
+  - currencyservice
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  id: C3
+  name: counterfactual_decoy_redirect
+  param_sets:
+  - decoy: auto
+    decoy2: auto
+    delay_ms: 150
+    mode: redirect
+  script: faults/C_decoy_control.sh
+  targets:
+  - productcatalogservice
+  - cartservice
+  - checkoutservice
+  - recommendationservice
+  - currencyservice
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  id: C4
+  name: counterfactual_decoy_split
+  param_sets:
+  - decoy: auto
+    decoy2: auto
+    delay_ms: 150
+    mode: split
+  script: faults/C_decoy_control.sh
+  targets:
+  - productcatalogservice
+  - cartservice
+  - checkoutservice
+  - recommendationservice
+  - currencyservice
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  id: C5
+  name: counterfactual_multi_decoy_change
+  param_sets:
+  - decoy: auto
+    decoy2: auto
+    delay_ms: 150
+    mode: multi
+  script: faults/C_decoy_control.sh
+  targets:
+  - productcatalogservice
+  - cartservice
+  - checkoutservice
+  - recommendationservice
+  - currencyservice
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  id: C6
+  name: benign_dynamic_control
+  param_sets:
+  - decoy: auto
+    decoy2: auto
+    delay_ms: 0
+    mode: benign
+  script: faults/C_decoy_control.sh
+  targets:
+  - productcatalogservice
+  - cartservice
+  - checkoutservice
+  - recommendationservice
+  - currencyservice
+settings:
+  cooldown_seconds: 30
+  health_check_timeout: 180
+  allow_hpa_pending: true
+  max_retries: 1
+  project_dir: /home/user/dyrca
+  python: /home/user/anaconda3/envs/aris/bin/python
+  randomize: true
+  repeats: 3
+  require_healthy: true
+  seed: 20260930

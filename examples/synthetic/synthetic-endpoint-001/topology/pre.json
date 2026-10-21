@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-01-01T00:00:00Z",
+  "pods": [
+    {
+      "name": "service-a-pod",
+      "service": "service-a",
+      "ip": "192.0.2.1",
+      "version": "v1"
+    },
+    {
+      "name": "service-b-pod",
+      "service": "service-b",
+      "ip": "192.0.2.2",
+      "version": "v1"
+    }
+  ],
+  "services": [
+    {
+      "name": "service-a",
+      "endpoint_ips": [
+        "192.0.2.1"
+      ]
+    },
+    {
+      "name": "service-b",
+      "endpoint_ips": [
+        "192.0.2.2"
+      ]
+    }
+  ],
+  "deployments": [
+    {
+      "name": "service-a",
+      "replicas": 1
+    },
+    {
+      "name": "service-b",
+      "replicas": 1
+    }
+  ]
+}

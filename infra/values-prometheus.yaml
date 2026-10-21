@@ -1,0 +1,123 @@
+# ============================================================
+# kube-prometheus-stack Helm values
+# Chart: prometheus-community/kube-prometheus-stack
+# ============================================================
+
+# --- Prometheus ---
+prometheus:
+  prometheusSpec:
+    retention: 7d
+    retentionSize: 8GB
+    resources:
+      requests:
+        cpu: 200m
+        memory: 1Gi
+      limits:
+        memory: 2Gi
+    # Scrape Istio sidecar (Envoy) metrics from boutique pods
+    additionalScrapeConfigs:
+      - job_name: "istio-proxy"
+        metrics_path: /stats/prometheus
+        scrape_interval: 5s
+        kubernetes_sd_configs:
+          - role: pod
+        relabel_configs:
+          # Only boutique namespace
+          - source_labels: [__meta_kubernetes_namespace]
+            regex: boutique
+            action: keep
+          # Only istio-proxy container
+          - source_labels: [__meta_kubernetes_pod_container_name]
+            regex: istio-proxy
+            action: keep
+          # Rewrite address to pod-ip:15090 (Envoy admin port)
+          - source_labels: [__meta_kubernetes_pod_ip]
+            regex: "(.*)"
+            target_label: __address__
+            replacement: "$1:15090"
+            action: replace
+          # Copy useful labels into metrics
+          - source_labels: [__meta_kubernetes_pod_name]
+            target_label: pod
+            action: replace
+          - source_labels: [__meta_kubernetes_pod_label_app]
+            target_label: app
+            action: replace
+          - source_labels: [__meta_kubernetes_namespace]
+            target_label: namespace
+            action: replace
+
+      - job_name: "istio-control-plane"
+        scrape_interval: 5s
+        kubernetes_sd_configs:
+          - role: pod
+            namespaces:
+              names:
+                - istio-system
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_pod_label_app]
+            regex: istiod
+            action: keep
+          - source_labels: [__meta_kubernetes_pod_ip]
+            regex: "(.*)"
+            target_label: __address__
+            replacement: "$1:15014"
+            action: replace
+
+# --- Grafana ---
+grafana:
+  service:
+    type: NodePort
+    nodePort: 30000
+  adminPassword: admin
+  # Add Loki and Tempo as additional datasources
+  additionalDataSources:
+    - name: Loki
+      type: loki
+      url: http://loki.observability:3100
+      isDefault: false
+    - name: Tempo
+      type: tempo
+      url: http://tempo.observability:3200
+      isDefault: false
+      jsonData:
+        tracesToMetrics:
+          datasourceUid: prometheus
+        tracesToLogs:
+          datasourceUid: loki
+        serviceMap:
+          datasourceUid: prometheus
+  # Auto-import Istio dashboards
+  dashboardProviders:
+    dashboardproviders.yaml:
+      apiVersion: 1
+      providers:
+        - name: default
+          orgId: 1
+          folder: ""
+          type: file
+          disableDeletion: false
+          editable: true
+          options:
+            path: /var/lib/grafana/dashboards/default
+  dashboards:
+    default:
+      istio-mesh:
+        gnetId: 7639
+        revision: 163
+        datasource: Prometheus
+      istio-service:
+        gnetId: 7636
+        revision: 163
+        datasource: Prometheus
+      istio-workload:
+        gnetId: 7630
+        revision: 163
+        datasource: Prometheus
+
+# --- Disable unnecessary components ---
+alertmanager:
+  enabled: false
+
+kubeEtcd:
+  enabled: false

@@ -1,0 +1,35 @@
+# ============================================================
+# Online Boutique Helm values
+# Chart: online-boutique/microservices-demo
+# ============================================================
+# NOTE: The exact field names depend on the chart version.
+# We apply OTel env vars via kubectl set env AFTER installation
+# for maximum compatibility. See deploy-all.sh Step 3.
+# ============================================================
+
+# Use built-in Redis for cartservice (no external Redis needed)
+cartservice:
+  redis:
+    enabled: true
+
+# Conservative resource limits for single-machine kind cluster
+# Applied as defaults; individual services can override
+default:
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 256Mi
+
+# --- Frontend: expose via NodePort ---
+# The chart may use `serviceType` or `service.type`.
+# We include both; the one that matches the chart template will take effect.
+# As a fallback, deploy-all.sh also runs kubectl patch.
+frontend:
+  serviceType: NodePort
+  service:
+    type: NodePort
+    port: 80
+    nodePort: 30080

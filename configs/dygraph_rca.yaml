@@ -1,0 +1,70 @@
+experiment:
+  name: dygraph_rca
+  data_root: data/experiments
+  artifacts_root: artifacts
+  seed: 42
+  split: random
+
+index:
+  smoke_limit: 10
+  smoke_path: artifacts/dygraph_rca_smoke/index.csv
+  full_path: artifacts/dygraph_rca_full/index.csv
+
+graph_updates:
+  planner: llm_with_rule_fallback
+  cached_llm_plans_dir: artifacts/dygraph_rca_full/llm_plans
+  llm_api:
+    base_url_env: DYRCA_LLM_BASE_URL
+    api_key_env: DYRCA_LLM_API_KEY
+    model_env: DYRCA_LLM_MODEL
+    default_model: gpt-5
+  variants:
+    - static_pre
+    - naive_during
+    - rule_node
+    - rule_edge
+    - rule_full
+    - llm_full
+  metrics:
+    - operation_validity_rate
+    - plan_execution_success_rate
+    - node_add_remove_f1
+    - node_alignment_accuracy
+    - edge_redirect_recall
+    - blackhole_recall
+    - version_split_recall
+    - edge_weight_mae
+    - trace_mismatch_recall
+
+models:
+  names:
+    - weighted_graphsage
+    - edge_aware_gat
+  fixed_config:
+    hidden_dim: 128
+    num_layers: 2
+    dropout: 0.1
+    lr: 0.003
+    weight_decay: 0.00001
+    epochs: 200
+    batch_size: 1
+    early_stop_patience: 30
+    pairwise_ranking_coef: 1.0
+  rule: shared constants only; do not run HPO, AutoML, or per-variant hyperparameter tuning
+
+reranker:
+  enabled_when_predictions_exist: true
+  mode: llm_with_rule_fallback
+  target_service_prior: true
+  allow_promotions_by_default: false
+  api_key_env: DYRCA_LLM_API_KEY
+  base_url_env: DYRCA_LLM_BASE_URL
+  fallback: rule
+  top_k: 5
+
+outputs:
+  smoke_results: artifacts/dygraph_rca_smoke/results
+  full_results: artifacts/dygraph_rca_full/results
+  graph_update_metrics: graph_update_metrics.csv
+  graph_update_by_scenario: graph_update_by_scenario.csv
+  report: report.md

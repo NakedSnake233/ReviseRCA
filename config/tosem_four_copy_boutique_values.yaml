@@ -1,0 +1,16 @@
+cartservice:
+  redis:
+    enabled: true
+default:
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 256Mi
+frontend:
+  serviceType: ClusterIP
+  service:
+    type: ClusterIP
+    port: 80

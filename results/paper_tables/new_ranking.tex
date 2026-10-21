@@ -1,0 +1,20 @@
+\begin{table}[tbp]
+\caption{RQ2: new within-application service ranking on the frozen seed-42 split of screened T1--T4 cases. H@1/H@3 are percentages and MRR is on the 0--1 scale. The Online Boutique column uses 45 new test runs in 12 frozen groups; it does not reuse the archival 45-case results. Service references are collector labels; independent causal adjudication remains pending. Table~\ref{tab:stability_results} reports grouped uncertainty.}
+\label{tab:new_ranking}
+\resultstable
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrrrr@{}}
+\toprule
+Method & OB H@1 & OB H@3 & OB MRR & TT H@1 & TT H@3 & TT MRR\\
+\midrule
+NSigma-Dyn & \Result{ob.rank_nsigma_h1} & \Result{ob.rank_nsigma_h3} & \Result{ob.rank_nsigma_mrr} & \Result{tt.rank_nsigma_h1} & \Result{tt.rank_nsigma_h3} & \Result{tt.rank_nsigma_mrr}\\
+BARO-Dyn & \Result{ob.rank_baro_h1} & \Result{ob.rank_baro_h3} & \Result{ob.rank_baro_mrr} & \Result{tt.rank_baro_h1} & \Result{tt.rank_baro_h3} & \Result{tt.rank_baro_mrr}\\
+CIRCA-Dyn & \Result{ob.rank_circa_h1} & \Result{ob.rank_circa_h3} & \Result{ob.rank_circa_mrr} & \Result{tt.rank_circa_h1} & \Result{tt.rank_circa_h3} & \Result{tt.rank_circa_mrr}\\
+CloudRanger-Dyn & \Result{ob.rank_cloudranger_h1} & \Result{ob.rank_cloudranger_h3} & \Result{ob.rank_cloudranger_mrr} & \Result{tt.rank_cloudranger_h1} & \Result{tt.rank_cloudranger_h3} & \Result{tt.rank_cloudranger_mrr}\\
+Eadro-Dyn & \Result{ob.rank_eadro_h1} & \Result{ob.rank_eadro_h3} & \Result{ob.rank_eadro_mrr} & \Result{tt.rank_eadro_h1} & \Result{tt.rank_eadro_h3} & \Result{tt.rank_eadro_mrr}\\
+HolisticRCA-Dyn & \Result{ob.rank_holistic_h1} & \Result{ob.rank_holistic_h3} & \Result{ob.rank_holistic_mrr} & \Result{tt.rank_holistic_h1} & \Result{tt.rank_holistic_h3} & \Result{tt.rank_holistic_mrr}\\
+Change-only & \Result{ob.rank_change_h1} & \Result{ob.rank_change_h3} & \Result{ob.rank_change_mrr} & \Result{tt.rank_change_h1} & \Result{tt.rank_change_h3} & \Result{tt.rank_change_mrr}\\
+Node-only & \Result{ob.rank_node_h1} & \Result{ob.rank_node_h3} & \Result{ob.rank_node_mrr} & \Result{tt.rank_node_h1} & \Result{tt.rank_node_h3} & \Result{tt.rank_node_mrr}\\
+DY-RCA, temporal v3 & \Result{ob.rank_dyrca_h1} & \Result{ob.rank_dyrca_h3} & \Result{ob.rank_dyrca_mrr} & \Result{tt.rank_dyrca_h1} & \Result{tt.rank_dyrca_h3} & \Result{tt.rank_dyrca_mrr}\\
+\bottomrule
+\end{tabular*}
+\end{table}

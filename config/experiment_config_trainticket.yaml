@@ -1,0 +1,141 @@
+# ============================================================
+# 动态拓扑故障数据集 — 批量实验配置 — TrainTicket (400 cases)
+# ============================================================
+# 使用方法: python -m runner.scheduler --config config/experiment_config_trainticket.yaml
+# ============================================================
+
+settings:
+  repeats: 5                  # 每个 (scenario × target × params) 重复次数
+  randomize: true             # 随机打乱实验顺序
+  max_retries: 2              # 单次实验失败后最大重试次数
+  cooldown_seconds: 120       # 两次实验之间的冷却时间 (秒)
+  python: /home/user/anaconda3/envs/aris/bin/python
+  project_dir: /home/user/dyrca
+  health_check_timeout: 300   # 实验前等待集群健康的最长时间 (秒)
+
+observability:
+  prom_url: http://localhost:9090
+  loki_url: http://localhost:3100
+  tempo_url: http://localhost:3200
+
+output:
+  data_dir: data/experiments_trainticket
+  summary_file: data/experiments_trainticket/batch_summary.json
+  log_file: data/experiments_trainticket/batch.log
+
+# ============================================================
+# 故障场景定义
+# 每个场景会产生 |targets| × |param_sets| × repeats 次实验
+# ============================================================
+scenarios:
+
+  # ── T1: HPA 弹性扩缩容 ──────────────────────────────────────
+  # 5 targets × 4 params × 5 repeats = 100
+  - id: T1
+    name: hpa_scale_trainticket
+    description: "HPA弹性扩缩容 - TrainTicket"
+    script: faults/T1_hpa_scale_trainticket.sh
+    targets:
+      - ts-travel-service
+      - ts-travel2-service
+      - ts-order-service
+      - ts-order-other-service
+      - ts-preserve-service
+    param_sets:
+      - cpu_workers: 2
+        cpu_load: 60
+      - cpu_workers: 4
+        cpu_load: 80
+      - cpu_workers: 3
+        cpu_load: 70
+      - cpu_workers: 6
+        cpu_load: 90
+    defaults:
+      during_sec: 120
+      post_sec: 120
+      pre_sec: 20
+
+  # ── T2: Pod 重建 / 节点漂移 ─────────────────────────────────
+  # 5 targets × 3 params × 5 repeats = 75
+  - id: T2
+    name: pod_drift_trainticket
+    description: "Pod重建/节点漂移 - TrainTicket"
+    script: faults/T2_pod_drift_trainticket.sh
+    targets:
+      - ts-station-service
+      - ts-basic-service
+      - ts-order-service
+      - ts-seat-service
+      - ts-ticketinfo-service
+    param_sets:
+      - kill_count: 1
+      - kill_count: 2
+      - kill_count: 1
+        during_sec: 180
+    defaults:
+      during_sec: 120
+      post_sec: 90
+      pre_sec: 20
+
+  # ── T3: Service Selector 标签投毒 ───────────────────────────
+  # 5 targets × 4 params × 5 repeats = 100
+  - id: T3
+    name: selector_poison_trainticket
+    description: "Service Selector 标签投毒 - TrainTicket"
+    script: faults/T3_selector_poison_trainticket.sh
+    targets:
+      - ts-basic-service
+      - ts-seat-service
+      - ts-order-service
+      - ts-ticketinfo-service
+      - ts-station-service
+    param_sets:
+      - variant: redirect
+        poison_target: ts-station-service
+      - variant: redirect
+        poison_target: ts-order-service
+      - variant: empty
+        poison_target: ""
+      - variant: redirect
+        poison_target: ts-basic-service
+    defaults:
+      during_sec: 120
+      post_sec: 90
+      pre_sec: 20
+
+  # ── T4: Canary 金丝雀发布 ───────────────────────────────────
+  # 5 targets × 5 params × 5 repeats = 125
+  - id: T4
+    name: canary_release_trainticket
+    description: "Canary金丝雀发布 - TrainTicket"
+    script: faults/T4_canary_trainticket.sh
+    targets:
+      - ts-travel-service
+      - ts-travel2-service
+      - ts-preserve-service
+      - ts-order-service
+      - ts-food-service
+    param_sets:
+      - v2_weight: 30
+        delay_ms: 200
+        abort_pct: 20
+      - v2_weight: 50
+        delay_ms: 500
+        abort_pct: 30
+      - v2_weight: 20
+        delay_ms: 100
+        abort_pct: 10
+      - v2_weight: 40
+        delay_ms: 300
+        abort_pct: 25
+      - v2_weight: 10
+        delay_ms: 1000
+        abort_pct: 50
+    defaults:
+      during_sec: 120
+      post_sec: 90
+      pre_sec: 20
+
+# ============================================================
+# 总计: 100 + 75 + 100 + 125 = 400 次实验
+# ============================================================

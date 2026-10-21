@@ -1,0 +1,2195 @@
+{
+  "source": "original frozen RQ1-RQ4 backfill; behavior extension is separate",
+  "original_mapping_sha256": "ec0277d8a776fb18348e002e8f1fe78106388e6c1323ada2a645de5b43aceb7b",
+  "fields": {
+    "audit.attribution": {
+      "value": "Same-value endpoint and equivalent-plan edits preserve tensors; masking accounts for final weights and node change/update summaries",
+      "denominator": null,
+      "note": ""
+    },
+    "audit.code_binding": {
+      "value": "Recorded source hashes; checkpoint 6ced021c1be3; temporal v3: 43 node fields, 8 edge fields; Git commit unavailable",
+      "denominator": null,
+      "note": "This binding does not certify unexecuted operation audits"
+    },
+    "audit.duplicate_event": {
+      "value": "90 / 90 retained; state API retry",
+      "denominator": 90,
+      "note": ""
+    },
+    "audit.endpoint_noop": {
+      "value": "0 / 45 changed inputs",
+      "denominator": 45,
+      "note": ""
+    },
+    "audit.ob_redundant": {
+      "value": "45 / 0 / 0",
+      "denominator": 45,
+      "note": ""
+    },
+    "audit.plan_noop": {
+      "value": "0 / 45 changed inputs",
+      "denominator": 45,
+      "note": ""
+    },
+    "audit.tag_masked": {
+      "value": "OB none/correct H@1 100.00/100.00; MRR 1.0000/1.0000",
+      "denominator": 45,
+      "note": "Complete operation-derived-channel masking; sensitivity, not a retrained encoding"
+    },
+    "audit.tt_redundant": {
+      "value": "42 / 0 / 0",
+      "denominator": 42,
+      "note": ""
+    },
+    "human.edit_audit_binding": {
+      "value": "OB 36 logged API tasks; collector-reference assessment; post-hoc; workbench ae973fdeae29",
+      "denominator": 36,
+      "note": ""
+    },
+    "human.edited_rank_by_content": {
+      "value": "4 supported edits; 3 changed service ranks; unsupported edits 0",
+      "denominator": 4,
+      "note": ""
+    },
+    "human.preview_unaccepted": {
+      "value": "0 / 4",
+      "denominator": 4,
+      "note": ""
+    },
+    "human.rescue_no_edits": {
+      "value": "n/a (eligible=0; stratum=32)",
+      "denominator": 0,
+      "note": "Executed agent service-level rescue; not independently scored human joint diagnosis"
+    },
+    "human.rescue_other_edits": {
+      "value": "n/a (eligible=0; stratum=0)",
+      "denominator": 0,
+      "note": "Executed agent service-level rescue; not independently scored human joint diagnosis"
+    },
+    "human.rescue_redundant_edits": {
+      "value": "n/a (eligible=0; stratum=0)",
+      "denominator": 0,
+      "note": "Executed agent service-level rescue; not independently scored human joint diagnosis"
+    },
+    "human.rescue_status_only": {
+      "value": "n/a (eligible=0; stratum=0)",
+      "denominator": 0,
+      "note": "Executed agent service-level rescue; not independently scored human joint diagnosis"
+    },
+    "human.rescue_supported_edits": {
+      "value": "n/a (eligible=0; stratum=4)",
+      "denominator": 0,
+      "note": "Executed agent service-level rescue; not independently scored human joint diagnosis"
+    },
+    "human.rescue_unassessable": {
+      "value": "n/a (eligible=0; stratum=0)",
+      "denominator": 0,
+      "note": "Executed agent service-level rescue; not independently scored human joint diagnosis"
+    },
+    "ob.ablation_nochange_h1": {
+      "value": "82.22",
+      "denominator": 45,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "ob.ablation_nochange_mrr": {
+      "value": "0.8774",
+      "denominator": 45,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "ob.ablation_nomask_h1": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "ob.ablation_nomask_mrr": {
+      "value": "1.0000",
+      "denominator": 45,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "ob.ablation_unitweight_h1": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "ob.ablation_unitweight_mrr": {
+      "value": "1.0000",
+      "denominator": 45,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "ob.ablation_v2_h1": {
+      "value": "82.22",
+      "denominator": 45,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "ob.ablation_v2_mrr": {
+      "value": "0.8730",
+      "denominator": 45,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "ob.ablation_v3_h1": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "ob.ablation_v3_mrr": {
+      "value": "1.0000",
+      "denominator": 45,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "ob.active_backend": {
+      "value": "2886 / 222",
+      "denominator": 222,
+      "note": "Eligible service-object comparisons / unique active cases, screened T1-T4 release"
+    },
+    "ob.active_endpoint_change": {
+      "value": "2886 / 222",
+      "denominator": 222,
+      "note": "Eligible service-object comparisons / unique active cases, screened T1-T4 release"
+    },
+    "ob.active_endpoint_empty": {
+      "value": "2886 / 0",
+      "denominator": 222,
+      "note": "Eligible service-object comparisons / unique active cases, screened T1-T4 release"
+    },
+    "ob.active_pod_change": {
+      "value": "3108 / 180",
+      "denominator": 222,
+      "note": "Eligible service-object comparisons / unique active cases, screened T1-T4 release"
+    },
+    "ob.active_readiness": {
+      "value": "2886 / 62",
+      "denominator": 222,
+      "note": "Eligible service-object comparisons / unique active cases, screened T1-T4 release"
+    },
+    "ob.active_version_change": {
+      "value": "3108 / 75",
+      "denominator": 222,
+      "note": "Eligible service-object comparisons / unique active cases, screened T1-T4 release"
+    },
+    "ob.adapter_effort": {
+      "value": "Shared frozen adapters; developer-hours not recorded",
+      "denominator": null,
+      "note": "No fabricated historical adaptation-time estimate"
+    },
+    "ob.agent_accepted": {
+      "value": 4,
+      "denominator": null,
+      "note": ""
+    },
+    "ob.agent_cases": {
+      "value": 36,
+      "denominator": null,
+      "note": ""
+    },
+    "ob.agent_corrected": {
+      "value": 4,
+      "denominator": null,
+      "note": ""
+    },
+    "ob.agent_fallback": {
+      "value": 5,
+      "denominator": null,
+      "note": ""
+    },
+    "ob.agent_guard_rejected": {
+      "value": 1,
+      "denominator": null,
+      "note": ""
+    },
+    "ob.agent_h0_assigned": {
+      "value": "36 / 36",
+      "denominator": 36,
+      "note": ""
+    },
+    "ob.agent_h0_correct": {
+      "value": "5 / 13.89",
+      "denominator": 36,
+      "note": ""
+    },
+    "ob.agent_h1_assigned": {
+      "value": "36 / 36",
+      "denominator": 36,
+      "note": ""
+    },
+    "ob.agent_h1_correct": {
+      "value": "20 / 55.56",
+      "denominator": 36,
+      "note": ""
+    },
+    "ob.agent_h1_damage": {
+      "value": "16 / 36",
+      "denominator": 36,
+      "note": ""
+    },
+    "ob.agent_h1_rescue": {
+      "value": "n/a (n=0)",
+      "denominator": 0,
+      "note": ""
+    },
+    "ob.agent_h2_assigned": {
+      "value": "36 / 36",
+      "denominator": 36,
+      "note": ""
+    },
+    "ob.agent_h2_correct": {
+      "value": "22 / 61.11",
+      "denominator": 36,
+      "note": ""
+    },
+    "ob.agent_h2_damage": {
+      "value": "14 / 36",
+      "denominator": 36,
+      "note": ""
+    },
+    "ob.agent_h2_rescue": {
+      "value": "n/a (n=0)",
+      "denominator": 0,
+      "note": ""
+    },
+    "ob.agent_initial_correct": {
+      "value": 36,
+      "denominator": 36,
+      "note": ""
+    },
+    "ob.agent_reference": {
+      "value": 13,
+      "denominator": null,
+      "note": ""
+    },
+    "ob.agent_repair_coverage": {
+      "value": "4 / 17",
+      "denominator": 17,
+      "note": ""
+    },
+    "ob.agent_repair_flow": {
+      "value": "4 / 4 / 4",
+      "denominator": null,
+      "note": ""
+    },
+    "ob.agent_seeded": {
+      "value": 17,
+      "denominator": null,
+      "note": ""
+    },
+    "ob.agent_service_rd": {
+      "value": "5.56 [-5.88, 22.58]",
+      "denominator": 36,
+      "note": "Exploratory configuration-cluster bootstrap; service correctness only; no participant model"
+    },
+    "ob.agent_sources": {
+      "value": "103 Luna / 5 fallback",
+      "denominator": 108,
+      "note": ""
+    },
+    "ob.application_revision": {
+      "value": "14 image strings; manifest d44c99a079e5; Git revision unavailable",
+      "denominator": null,
+      "note": "Post-export runtime inventory only; no use in model inputs or source-reference fidelity"
+    },
+    "ob.bootstrap_ci": {
+      "value": "2,000 configuration draws; 95% percentile interval",
+      "denominator": null,
+      "note": ""
+    },
+    "ob.eligible_rows": {
+      "value": "1872 / [1450.5, 2285.25]",
+      "denominator": 222,
+      "note": "Consumed eligible rows after bounded scan, not all eligible rows before truncation"
+    },
+    "ob.exported_n": {
+      "value": 330,
+      "denominator": null,
+      "note": "Topology/evidence screening, not independent causal adjudication"
+    },
+    "ob.feedback_correct_accepted": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_correct_better": {
+      "value": 0,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_correct_damage": {
+      "value": "0.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_correct_fidelity": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_correct_h1": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_correct_mrr": {
+      "value": "1.0000",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_correct_n": {
+      "value": 45,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_correct_repair": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_correct_same": {
+      "value": 45,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_correct_worse": {
+      "value": 0,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_incorrect_accepted": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_incorrect_better": {
+      "value": 0,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_incorrect_damage": {
+      "value": "0.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_incorrect_fidelity": {
+      "value": "96.21",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_incorrect_h1": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_incorrect_mrr": {
+      "value": "1.0000",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_incorrect_n": {
+      "value": 45,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_incorrect_repair": {
+      "value": "0.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_incorrect_same": {
+      "value": 45,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_incorrect_worse": {
+      "value": 0,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_nomination_accepted": {
+      "value": "n/a",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_nomination_better": {
+      "value": 0,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_nomination_damage": {
+      "value": "0.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_nomination_fidelity": {
+      "value": "96.21",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_nomination_h1": {
+      "value": "8.89",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_nomination_mrr": {
+      "value": "0.5444",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_nomination_n": {
+      "value": 45,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_nomination_repair": {
+      "value": "0.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_nomination_same": {
+      "value": 4,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_nomination_worse": {
+      "value": 41,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_none_accepted": {
+      "value": "n/a",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_none_better": {
+      "value": 0,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_none_damage": {
+      "value": "0.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_none_fidelity": {
+      "value": "96.21",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_none_h1": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_none_mrr": {
+      "value": "1.0000",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_none_n": {
+      "value": 45,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_none_repair": {
+      "value": "0.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_none_same": {
+      "value": 45,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_none_worse": {
+      "value": 0,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_partial_accepted": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_partial_better": {
+      "value": 0,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_partial_damage": {
+      "value": "0.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_partial_fidelity": {
+      "value": "98.10",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_partial_h1": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_partial_mrr": {
+      "value": "1.0000",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_partial_n": {
+      "value": 45,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_partial_repair": {
+      "value": "50.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_partial_same": {
+      "value": 45,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_partial_worse": {
+      "value": 0,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_redundant_accepted": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_redundant_better": {
+      "value": 0,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_redundant_damage": {
+      "value": "0.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_redundant_fidelity": {
+      "value": "96.21",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_redundant_h1": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_redundant_mrr": {
+      "value": "1.0000",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_redundant_n": {
+      "value": 45,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_redundant_repair": {
+      "value": "0.00",
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_redundant_same": {
+      "value": 45,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_redundant_worse": {
+      "value": 0,
+      "denominator": 45,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "ob.feedback_subgroups": {
+      "value": "other services n=36, H@1 100.00/100.00, source consistency 96.21/100.00; named auxiliary services n=9, H@1 100.00/100.00, source consistency 96.19/100.00",
+      "denominator": {
+        "named_auxiliary_services": 9,
+        "remaining_services": 36
+      },
+      "note": "No-repair/full-repair comparison; exploratory same-incident subgroup description"
+    },
+    "ob.fidelity_audit_n_objects": {
+      "value": "222 / 11711",
+      "denominator": 222,
+      "note": "Independent parser of the same collector snapshots: source consistency, not external truth or causal fidelity"
+    },
+    "ob.fidelity_discoverable_n": {
+      "value": "0 / 222",
+      "denominator": 222,
+      "note": "Local snapshot-field discrepancies only; no GUI participant observation"
+    },
+    "ob.fidelity_endpoint_pr": {
+      "value": "100.00 / 100.00",
+      "denominator": {
+        "cases": 222,
+        "objects": 5772
+      },
+      "note": "Case-macro of per-case endpoint-object macro precision/recall"
+    },
+    "ob.fidelity_fidelity": {
+      "value": "100.00",
+      "denominator": null,
+      "note": ""
+    },
+    "ob.fidelity_natural_defect_n": {
+      "value": "0 / 222",
+      "denominator": 222,
+      "note": "Local snapshot-field discrepancies only; no GUI participant observation"
+    },
+    "ob.fidelity_packet_discoverable_n": {
+      "value": "0 / 222",
+      "denominator": 222,
+      "note": "Local snapshot-field discrepancies only; no GUI participant observation"
+    },
+    "ob.fidelity_provenance_accuracy": {
+      "value": "444 / 444",
+      "denominator": 444,
+      "note": "One timestamp/content-address check per topology snapshot; not object-level provenance or a human status rubric"
+    },
+    "ob.fidelity_route_error": {
+      "value": "0 / n/a",
+      "denominator": 0,
+      "note": "No eligible independent numeric route weights; L1 error has an empty denominator"
+    },
+    "ob.fidelity_seeded_noop_n": {
+      "value": "45 / 45",
+      "denominator": {
+        "seeded": 45,
+        "unperturbed": 45
+      },
+      "note": ""
+    },
+    "ob.fidelity_status_accuracy": {
+      "value": "100.00",
+      "denominator": 1332,
+      "note": ""
+    },
+    "ob.fidelity_unverifiable_n": {
+      "value": 75,
+      "denominator": null,
+      "note": "Unknown fields plus multiversion groups with no eligible numeric route reference"
+    },
+    "ob.fidelity_version_agreement": {
+      "value": "100.00",
+      "denominator": {
+        "cases": 222,
+        "objects": 5939
+      },
+      "note": "Case-macro of per-case raw Pod service/version field agreement; not proof of complete logical version/routing graphs"
+    },
+    "ob.intended_n": {
+      "value": 330,
+      "denominator": null,
+      "note": ""
+    },
+    "ob.latency_accept_p50": {
+      "value": "18.962",
+      "denominator": 200,
+      "note": "Workbench API including persistence for accept/conflict; warm OS file cache"
+    },
+    "ob.latency_accept_p95": {
+      "value": "19.690",
+      "denominator": 200,
+      "note": "Workbench API including persistence for accept/conflict; warm OS file cache"
+    },
+    "ob.latency_cold_p50": {
+      "value": "42.568",
+      "denominator": 200,
+      "note": "Warm OS/file cache after five warmups; uncached graph reconstruction or cached tensor inference; CPU"
+    },
+    "ob.latency_cold_p95": {
+      "value": "45.076",
+      "denominator": 200,
+      "note": "Warm OS/file cache after five warmups; uncached graph reconstruction or cached tensor inference; CPU"
+    },
+    "ob.latency_conflict_p50": {
+      "value": "19.871",
+      "denominator": 200,
+      "note": "Workbench API including persistence for accept/conflict; warm OS file cache"
+    },
+    "ob.latency_conflict_p95": {
+      "value": "20.525",
+      "denominator": 200,
+      "note": "Workbench API including persistence for accept/conflict; warm OS file cache"
+    },
+    "ob.latency_infer_p50": {
+      "value": "0.597",
+      "denominator": 200,
+      "note": "Warm OS/file cache after five warmups; uncached graph reconstruction or cached tensor inference; CPU"
+    },
+    "ob.latency_infer_p95": {
+      "value": "0.793",
+      "denominator": 200,
+      "note": "Warm OS/file cache after five warmups; uncached graph reconstruction or cached tensor inference; CPU"
+    },
+    "ob.latency_preview_p50": {
+      "value": "9.621",
+      "denominator": 200,
+      "note": "Workbench API including persistence for accept/conflict; warm OS file cache"
+    },
+    "ob.latency_preview_p95": {
+      "value": "9.993",
+      "denominator": 200,
+      "note": "Workbench API including persistence for accept/conflict; warm OS file cache"
+    },
+    "ob.other_excluded_n": {
+      "value": 0,
+      "denominator": null,
+      "note": "Other topology-screen exclusions only"
+    },
+    "ob.rank_baro_h1": {
+      "value": "64.44",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_baro_h3": {
+      "value": "64.44",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_baro_mrr": {
+      "value": "0.7200",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_change_h1": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_change_h3": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_change_mrr": {
+      "value": "1.0000",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_circa_h1": {
+      "value": "84.44",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_circa_h3": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_circa_mrr": {
+      "value": "0.9185",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_cloudranger_h1": {
+      "value": "64.44",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_cloudranger_h3": {
+      "value": "68.89",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_cloudranger_mrr": {
+      "value": "0.7140",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_dyrca_h1": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_dyrca_h3": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_dyrca_mrr": {
+      "value": "1.0000",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_eadro_h1": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_eadro_h3": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_eadro_mrr": {
+      "value": "1.0000",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_holistic_h1": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_holistic_h3": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_holistic_mrr": {
+      "value": "1.0000",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_node_h1": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_node_h3": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_node_mrr": {
+      "value": "1.0000",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_nsigma_h1": {
+      "value": "95.56",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_nsigma_h3": {
+      "value": "100.00",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.rank_nsigma_mrr": {
+      "value": "0.9778",
+      "denominator": 45,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "ob.regression_overlap": {
+      "value": "Not retained",
+      "denominator": null,
+      "note": ""
+    },
+    "ob.release_manifest": {
+      "value": "split 11eb72354a84; predictions 494cb9bb6d06",
+      "denominator": null,
+      "note": ""
+    },
+    "ob.runtime_manifest": {
+      "value": "CPU, one thread; PyTorch 2.6.0+cu124",
+      "denominator": null,
+      "note": ""
+    },
+    "ob.scenario_fault_benign": {
+      "value": 75,
+      "denominator": null,
+      "note": "Co-occurring-change proxy; decoy health has not been independently adjudicated"
+    },
+    "ob.scenario_fault_change": {
+      "value": 222,
+      "denominator": null,
+      "note": "Screened T1-T4 family count; causal relevance not independently adjudicated"
+    },
+    "ob.scenario_fault_nochange": {
+      "value": 0,
+      "denominator": null,
+      "note": "No observed service endpoint/pod/version change; source-defined proxy"
+    },
+    "ob.scenario_multi_change": {
+      "value": 17,
+      "denominator": null,
+      "note": "More than one observed changed service; categories may overlap"
+    },
+    "ob.scenario_samechange": {
+      "value": 30,
+      "denominator": null,
+      "note": "Exploratory exact aggregate observed-change match; benign matches reused; not an independently adjudicated matched causal cohort"
+    },
+    "ob.screened_n": {
+      "value": 312,
+      "denominator": null,
+      "note": "Topology/evidence screening, not independent causal adjudication"
+    },
+    "ob.seeds_splits": {
+      "value": "Training: 42, 123, 456, 789, 2024; split: 42, 137, 2026",
+      "denominator": null,
+      "note": ""
+    },
+    "ob.services_nodes": {
+      "value": "14 / 28",
+      "denominator": 222,
+      "note": "Builder service nodes / total graph nodes in the screened T1-T4 release"
+    },
+    "ob.shortcut_fault_benign_change_h1": {
+      "value": "0.00",
+      "denominator": 75,
+      "note": "Exploratory observed-change proxy; total rows=75; scored denominator excludes null ranking outcomes; no independent healthy-decoy adjudication"
+    },
+    "ob.shortcut_fault_benign_decoy_rate": {
+      "value": "100.00/100.00/96.00 (n=75)",
+      "denominator": 75,
+      "note": "Change/Node/DY protocol-decoy nomination percentages; no independent physical-health claim"
+    },
+    "ob.shortcut_fault_benign_dy_h1": {
+      "value": "1.33",
+      "denominator": 75,
+      "note": "Exploratory observed-change proxy; total rows=75; scored denominator excludes null ranking outcomes; no independent healthy-decoy adjudication"
+    },
+    "ob.shortcut_fault_benign_node_h1": {
+      "value": "0.00",
+      "denominator": 75,
+      "note": "Exploratory observed-change proxy; total rows=75; scored denominator excludes null ranking outcomes; no independent healthy-decoy adjudication"
+    },
+    "ob.shortcut_fault_nochange_change_h1": {
+      "value": "n/a (n=0)",
+      "denominator": 0,
+      "note": ""
+    },
+    "ob.shortcut_fault_nochange_decoy_rate": {
+      "value": "n/a (n=0)",
+      "denominator": 0,
+      "note": ""
+    },
+    "ob.shortcut_fault_nochange_dy_h1": {
+      "value": "n/a (n=0)",
+      "denominator": 0,
+      "note": ""
+    },
+    "ob.shortcut_fault_nochange_node_h1": {
+      "value": "n/a (n=0)",
+      "denominator": 0,
+      "note": ""
+    },
+    "ob.shortcut_multi_change_change_h1": {
+      "value": "6.25",
+      "denominator": 16,
+      "note": "Exploratory observed-change proxy; total rows=16; scored denominator excludes null ranking outcomes; no independent healthy-decoy adjudication"
+    },
+    "ob.shortcut_multi_change_decoy_rate": {
+      "value": "100.00/100.00/100.00 (n=15)",
+      "denominator": 15,
+      "note": "Change/Node/DY protocol-decoy nomination percentages; no independent physical-health claim"
+    },
+    "ob.shortcut_multi_change_dy_h1": {
+      "value": "6.25",
+      "denominator": 16,
+      "note": "Exploratory observed-change proxy; total rows=16; scored denominator excludes null ranking outcomes; no independent healthy-decoy adjudication"
+    },
+    "ob.shortcut_multi_change_node_h1": {
+      "value": "6.25",
+      "denominator": 16,
+      "note": "Exploratory observed-change proxy; total rows=16; scored denominator excludes null ranking outcomes; no independent healthy-decoy adjudication"
+    },
+    "ob.shortcut_samechange_change_h1": {
+      "value": "0.00",
+      "denominator": 30,
+      "note": "Exploratory observed-change matching and protocol-decoy nomination; not independently healthy-decoy error"
+    },
+    "ob.shortcut_samechange_decoy_rate": {
+      "value": "100.00/100.00/100.00 (n=30)",
+      "denominator": 30,
+      "note": "Change/Node/DY protocol-decoy nomination percentages; no independent physical-health claim"
+    },
+    "ob.shortcut_samechange_dy_h1": {
+      "value": "0.00",
+      "denominator": 30,
+      "note": "Exploratory observed-change matching and protocol-decoy nomination; not independently healthy-decoy error"
+    },
+    "ob.shortcut_samechange_node_h1": {
+      "value": "0.00",
+      "denominator": 30,
+      "note": "Exploratory observed-change matching and protocol-decoy nomination; not independently healthy-decoy error"
+    },
+    "ob.stability_baseline_delta_ci": {
+      "value": "0.0185 / [0.0000, 0.0509]",
+      "denominator": 12,
+      "note": "Configuration-macro MRR difference"
+    },
+    "ob.stability_comparator_rule": {
+      "value": "NSigma-Dyn; validation macro MRR, then Hit@1 and fixed order",
+      "denominator": null,
+      "note": ""
+    },
+    "ob.stability_macro_ci": {
+      "value": "100.00 / [100.00, 100.00]",
+      "denominator": 12,
+      "note": "Post-hoc deterministic group bootstrap of existing frozen predictions"
+    },
+    "ob.stability_split_variation": {
+      "value": "3 / 100.00 (0.00)",
+      "denominator": 3,
+      "note": "Configuration-macro Hit@1; repeats are not independent incidents"
+    },
+    "ob.stability_train_variation": {
+      "value": "5 / 100.00 (0.00)",
+      "denominator": 5,
+      "note": "Configuration-macro Hit@1; repeats are not independent incidents"
+    },
+    "ob.stability_weight_sensitivity": {
+      "value": "change 0/.10/.30; H@1 [100.00, 100.00]; MRR [1.0000, 1.0000]",
+      "denominator": 45,
+      "note": "Three fixed nominal inference-time settings; available edge channels renormalize effective shares, recorded in evidence; no selection or retuning"
+    },
+    "ob.target_configuration_coverage": {
+      "value": "6 targets / 60 frozen keys",
+      "denominator": null,
+      "note": ""
+    },
+    "ob.test_n_groups": {
+      "value": "45 / 12",
+      "denominator": null,
+      "note": "Frozen grouping key is experiment-name prefix before the last -run"
+    },
+    "ob.topology_excluded_n": {
+      "value": 18,
+      "denominator": null,
+      "note": "Topology/evidence screening, not independent causal adjudication"
+    },
+    "ob.trace_budget": {
+      "value": "10,000 scanned rows; CSV order, then window/completion filter",
+      "denominator": null,
+      "note": ""
+    },
+    "ob.train_n_groups": {
+      "value": "132 / 36",
+      "denominator": null,
+      "note": "Frozen grouping key is experiment-name prefix before the last -run"
+    },
+    "ob.truncation_rate": {
+      "value": "91.89",
+      "denominator": 222,
+      "note": "Proportion with a truncated CSV scan"
+    },
+    "ob.unrealized_n": {
+      "value": 18,
+      "denominator": null,
+      "note": "Unrealized intended topology change, not causal diagnosis"
+    },
+    "ob.unresolved_n": {
+      "value": "312 screened runs lack causal adjudication",
+      "denominator": null,
+      "note": ""
+    },
+    "ob.val_n_groups": {
+      "value": "45 / 12",
+      "denominator": null,
+      "note": "Frozen grouping key is experiment-name prefix before the last -run"
+    },
+    "ob.verification_disagreement": {
+      "value": "n/a (0 independent adjudicators)",
+      "denominator": 0,
+      "note": ""
+    },
+    "ob.verified_n": {
+      "value": "n/a (no external causal reference)",
+      "denominator": 0,
+      "note": ""
+    },
+    "ob.version_coverage": {
+      "value": "100.00",
+      "denominator": 2961,
+      "note": ""
+    },
+    "ob.window_rule": {
+      "value": "Pre/during snapshots; during cutoff; completed spans; no extra trace start bound; arrival times unavailable",
+      "denominator": null,
+      "note": ""
+    },
+    "ob.workload_rate": {
+      "value": "frontend median 5.24 req/s; 222 eligible cases",
+      "denominator": 222,
+      "note": "pre/during topology interval, inbound frontend; not total cross-service traffic"
+    },
+    "revision.tests_passed": {
+      "value": 39,
+      "denominator": 39,
+      "note": ""
+    },
+    "revision.tests_total": {
+      "value": 39,
+      "denominator": null,
+      "note": "Two fixture/contract test files; not real incident replays"
+    },
+    "t4.packet_binding": {
+      "value": "OB 75 observation-only unsplit cases; collector Pod version labels; no eligible numeric route reference",
+      "denominator": 75,
+      "note": ""
+    },
+    "t4.repair_restraint": {
+      "value": "Numeric repair 0; source-required restraint 75",
+      "denominator": 75,
+      "note": "Source-availability classification, not observed human restraint"
+    },
+    "tt.ablation_nochange_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "tt.ablation_nochange_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "tt.ablation_nomask_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "tt.ablation_nomask_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "tt.ablation_unitweight_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "tt.ablation_unitweight_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "tt.ablation_v2_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "tt.ablation_v2_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "tt.ablation_v3_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "tt.ablation_v3_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "Retrained, seed 42; same main test"
+    },
+    "tt.active_backend": {
+      "value": "14040 / 36",
+      "denominator": 216,
+      "note": "Eligible service-object comparisons / unique active cases, screened T1-T4 release"
+    },
+    "tt.active_endpoint_change": {
+      "value": "14040 / 155",
+      "denominator": 216,
+      "note": "Eligible service-object comparisons / unique active cases, screened T1-T4 release"
+    },
+    "tt.active_endpoint_empty": {
+      "value": "14040 / 44",
+      "denominator": 216,
+      "note": "Eligible service-object comparisons / unique active cases, screened T1-T4 release"
+    },
+    "tt.active_pod_change": {
+      "value": "14040 / 180",
+      "denominator": 216,
+      "note": "Eligible service-object comparisons / unique active cases, screened T1-T4 release"
+    },
+    "tt.active_readiness": {
+      "value": "14040 / 44",
+      "denominator": 216,
+      "note": "Eligible service-object comparisons / unique active cases, screened T1-T4 release"
+    },
+    "tt.active_version_change": {
+      "value": "14040 / 75",
+      "denominator": 216,
+      "note": "Eligible service-object comparisons / unique active cases, screened T1-T4 release"
+    },
+    "tt.adapter_effort": {
+      "value": "Shared frozen adapters; developer-hours not recorded",
+      "denominator": null,
+      "note": "No fabricated historical adaptation-time estimate"
+    },
+    "tt.agent_accepted": {
+      "value": 7,
+      "denominator": null,
+      "note": ""
+    },
+    "tt.agent_cases": {
+      "value": 36,
+      "denominator": null,
+      "note": ""
+    },
+    "tt.agent_corrected": {
+      "value": 7,
+      "denominator": null,
+      "note": ""
+    },
+    "tt.agent_fallback": {
+      "value": 0,
+      "denominator": null,
+      "note": ""
+    },
+    "tt.agent_guard_rejected": {
+      "value": 0,
+      "denominator": null,
+      "note": ""
+    },
+    "tt.agent_h0_assigned": {
+      "value": "36 / 36",
+      "denominator": 36,
+      "note": ""
+    },
+    "tt.agent_h0_correct": {
+      "value": "2 / 5.56",
+      "denominator": 36,
+      "note": ""
+    },
+    "tt.agent_h1_assigned": {
+      "value": "36 / 36",
+      "denominator": 36,
+      "note": ""
+    },
+    "tt.agent_h1_correct": {
+      "value": "7 / 19.44",
+      "denominator": 36,
+      "note": ""
+    },
+    "tt.agent_h1_damage": {
+      "value": "29 / 36",
+      "denominator": 36,
+      "note": ""
+    },
+    "tt.agent_h1_rescue": {
+      "value": "n/a (n=0)",
+      "denominator": 0,
+      "note": ""
+    },
+    "tt.agent_h2_assigned": {
+      "value": "36 / 36",
+      "denominator": 36,
+      "note": ""
+    },
+    "tt.agent_h2_correct": {
+      "value": "8 / 22.22",
+      "denominator": 36,
+      "note": ""
+    },
+    "tt.agent_h2_damage": {
+      "value": "28 / 36",
+      "denominator": 36,
+      "note": ""
+    },
+    "tt.agent_h2_rescue": {
+      "value": "n/a (n=0)",
+      "denominator": 0,
+      "note": ""
+    },
+    "tt.agent_initial_correct": {
+      "value": 36,
+      "denominator": 36,
+      "note": ""
+    },
+    "tt.agent_reference": {
+      "value": 15,
+      "denominator": null,
+      "note": ""
+    },
+    "tt.agent_repair_coverage": {
+      "value": "7 / 16",
+      "denominator": 16,
+      "note": ""
+    },
+    "tt.agent_repair_flow": {
+      "value": "7 / 7 / 7",
+      "denominator": null,
+      "note": ""
+    },
+    "tt.agent_seeded": {
+      "value": 16,
+      "denominator": null,
+      "note": ""
+    },
+    "tt.agent_service_rd": {
+      "value": "2.78 [-6.25, 11.11]",
+      "denominator": 36,
+      "note": "Exploratory configuration-cluster bootstrap; service correctness only; no participant model"
+    },
+    "tt.agent_sources": {
+      "value": "108 Luna / 0 fallback",
+      "denominator": 108,
+      "note": ""
+    },
+    "tt.application_revision": {
+      "value": "46 image strings; manifest 8c78f36d1c30; Git revision unavailable",
+      "denominator": null,
+      "note": "Post-export runtime inventory only; no use in model inputs or source-reference fidelity"
+    },
+    "tt.bootstrap_ci": {
+      "value": "2,000 configuration draws; 95% percentile interval",
+      "denominator": null,
+      "note": ""
+    },
+    "tt.eligible_rows": {
+      "value": "1381.5 / [876.75, 5563.75]",
+      "denominator": 216,
+      "note": "Consumed eligible rows after bounded scan, not all eligible rows before truncation"
+    },
+    "tt.exported_n": {
+      "value": 330,
+      "denominator": null,
+      "note": "Topology/evidence screening, not independent causal adjudication"
+    },
+    "tt.feedback_correct_accepted": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_correct_better": {
+      "value": 0,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_correct_damage": {
+      "value": "0.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_correct_fidelity": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_correct_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_correct_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_correct_n": {
+      "value": 42,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_correct_repair": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_correct_same": {
+      "value": 42,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_correct_worse": {
+      "value": 0,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_incorrect_accepted": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_incorrect_better": {
+      "value": 0,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_incorrect_damage": {
+      "value": "0.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_incorrect_fidelity": {
+      "value": "99.23",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_incorrect_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_incorrect_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_incorrect_n": {
+      "value": 42,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_incorrect_repair": {
+      "value": "0.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_incorrect_same": {
+      "value": 42,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_incorrect_worse": {
+      "value": 0,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_nomination_accepted": {
+      "value": "n/a",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_nomination_better": {
+      "value": 0,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_nomination_damage": {
+      "value": "0.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_nomination_fidelity": {
+      "value": "99.23",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_nomination_h1": {
+      "value": "0.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_nomination_mrr": {
+      "value": "0.5000",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_nomination_n": {
+      "value": 42,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_nomination_repair": {
+      "value": "0.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_nomination_same": {
+      "value": 0,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_nomination_worse": {
+      "value": 42,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_none_accepted": {
+      "value": "n/a",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_none_better": {
+      "value": 0,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_none_damage": {
+      "value": "0.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_none_fidelity": {
+      "value": "99.23",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_none_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_none_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_none_n": {
+      "value": 42,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_none_repair": {
+      "value": "0.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_none_same": {
+      "value": 42,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_none_worse": {
+      "value": 0,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_partial_accepted": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_partial_better": {
+      "value": 0,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_partial_damage": {
+      "value": "0.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_partial_fidelity": {
+      "value": "99.62",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_partial_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_partial_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_partial_n": {
+      "value": 42,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_partial_repair": {
+      "value": "50.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_partial_same": {
+      "value": 42,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_partial_worse": {
+      "value": 0,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_redundant_accepted": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_redundant_better": {
+      "value": 0,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_redundant_damage": {
+      "value": "0.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_redundant_fidelity": {
+      "value": "99.23",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_redundant_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_redundant_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_redundant_n": {
+      "value": 42,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_redundant_repair": {
+      "value": "0.00",
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_redundant_same": {
+      "value": 42,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_redundant_worse": {
+      "value": 0,
+      "denominator": 42,
+      "note": "Primary seeded stratum; two phase endpoint objects at one label-blind service; collector-source oracle content; separate unperturbed results in artifact"
+    },
+    "tt.feedback_subgroups": {
+      "value": "other services n=42, H@1 100.00/100.00, source consistency 99.23/100.00; named auxiliary services n=0, n/a",
+      "denominator": {
+        "named_auxiliary_services": 0,
+        "remaining_services": 42
+      },
+      "note": "No-repair/full-repair comparison; exploratory same-incident subgroup description"
+    },
+    "tt.fidelity_audit_n_objects": {
+      "value": "216 / 56301",
+      "denominator": 216,
+      "note": "Independent parser of the same collector snapshots: source consistency, not external truth or causal fidelity"
+    },
+    "tt.fidelity_discoverable_n": {
+      "value": "0 / 216",
+      "denominator": 216,
+      "note": "Local snapshot-field discrepancies only; no GUI participant observation"
+    },
+    "tt.fidelity_endpoint_pr": {
+      "value": "100.00 / 100.00",
+      "denominator": {
+        "cases": 216,
+        "objects": 28080
+      },
+      "note": "Case-macro of per-case endpoint-object macro precision/recall"
+    },
+    "tt.fidelity_fidelity": {
+      "value": "100.00",
+      "denominator": null,
+      "note": ""
+    },
+    "tt.fidelity_natural_defect_n": {
+      "value": "0 / 216",
+      "denominator": 216,
+      "note": "Local snapshot-field discrepancies only; no GUI participant observation"
+    },
+    "tt.fidelity_packet_discoverable_n": {
+      "value": "0 / 216",
+      "denominator": 216,
+      "note": "Local snapshot-field discrepancies only; no GUI participant observation"
+    },
+    "tt.fidelity_provenance_accuracy": {
+      "value": "432 / 432",
+      "denominator": 432,
+      "note": "One timestamp/content-address check per topology snapshot; not object-level provenance or a human status rubric"
+    },
+    "tt.fidelity_route_error": {
+      "value": "0 / n/a",
+      "denominator": 0,
+      "note": "No eligible independent numeric route weights; L1 error has an empty denominator"
+    },
+    "tt.fidelity_seeded_noop_n": {
+      "value": "42 / 42",
+      "denominator": {
+        "seeded": 42,
+        "unperturbed": 42
+      },
+      "note": ""
+    },
+    "tt.fidelity_status_accuracy": {
+      "value": "100.00",
+      "denominator": 1296,
+      "note": ""
+    },
+    "tt.fidelity_unverifiable_n": {
+      "value": 75,
+      "denominator": null,
+      "note": "Unknown fields plus multiversion groups with no eligible numeric route reference"
+    },
+    "tt.fidelity_version_agreement": {
+      "value": "100.00",
+      "denominator": {
+        "cases": 216,
+        "objects": 28221
+      },
+      "note": "Case-macro of per-case raw Pod service/version field agreement; not proof of complete logical version/routing graphs"
+    },
+    "tt.intended_n": {
+      "value": 330,
+      "denominator": null,
+      "note": ""
+    },
+    "tt.latency_accept_p50": {
+      "value": "70.089",
+      "denominator": 200,
+      "note": "Workbench API including persistence for accept/conflict; warm OS file cache"
+    },
+    "tt.latency_accept_p95": {
+      "value": "73.487",
+      "denominator": 200,
+      "note": "Workbench API including persistence for accept/conflict; warm OS file cache"
+    },
+    "tt.latency_cold_p50": {
+      "value": "40.469",
+      "denominator": 200,
+      "note": "Warm OS/file cache after five warmups; uncached graph reconstruction or cached tensor inference; CPU"
+    },
+    "tt.latency_cold_p95": {
+      "value": "45.028",
+      "denominator": 200,
+      "note": "Warm OS/file cache after five warmups; uncached graph reconstruction or cached tensor inference; CPU"
+    },
+    "tt.latency_conflict_p50": {
+      "value": "75.066",
+      "denominator": 200,
+      "note": "Workbench API including persistence for accept/conflict; warm OS file cache"
+    },
+    "tt.latency_conflict_p95": {
+      "value": "77.176",
+      "denominator": 200,
+      "note": "Workbench API including persistence for accept/conflict; warm OS file cache"
+    },
+    "tt.latency_infer_p50": {
+      "value": "1.027",
+      "denominator": 200,
+      "note": "Warm OS/file cache after five warmups; uncached graph reconstruction or cached tensor inference; CPU"
+    },
+    "tt.latency_infer_p95": {
+      "value": "1.318",
+      "denominator": 200,
+      "note": "Warm OS/file cache after five warmups; uncached graph reconstruction or cached tensor inference; CPU"
+    },
+    "tt.latency_preview_p50": {
+      "value": "34.108",
+      "denominator": 200,
+      "note": "Workbench API including persistence for accept/conflict; warm OS file cache"
+    },
+    "tt.latency_preview_p95": {
+      "value": "34.798",
+      "denominator": 200,
+      "note": "Workbench API including persistence for accept/conflict; warm OS file cache"
+    },
+    "tt.other_excluded_n": {
+      "value": 0,
+      "denominator": null,
+      "note": "Other topology-screen exclusions only"
+    },
+    "tt.rank_baro_h1": {
+      "value": "38.10",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_baro_h3": {
+      "value": "40.48",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_baro_mrr": {
+      "value": "0.4511",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_change_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_change_h3": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_change_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_circa_h1": {
+      "value": "95.24",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_circa_h3": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_circa_mrr": {
+      "value": "0.9762",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_cloudranger_h1": {
+      "value": "0.00",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_cloudranger_h3": {
+      "value": "4.76",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_cloudranger_mrr": {
+      "value": "0.1235",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_dyrca_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_dyrca_h3": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_dyrca_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_eadro_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_eadro_h3": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_eadro_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_holistic_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_holistic_h3": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_holistic_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_node_h1": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_node_h3": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_node_mrr": {
+      "value": "1.0000",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_nsigma_h1": {
+      "value": "97.62",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_nsigma_h3": {
+      "value": "100.00",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.rank_nsigma_mrr": {
+      "value": "0.9881",
+      "denominator": 42,
+      "note": "New within-application main split, not archival 45-case scores"
+    },
+    "tt.regression_overlap": {
+      "value": "Not retained",
+      "denominator": null,
+      "note": ""
+    },
+    "tt.release_manifest": {
+      "value": "split f17030415bf3; predictions bd9da58b6f0c",
+      "denominator": null,
+      "note": ""
+    },
+    "tt.runtime_manifest": {
+      "value": "CPU, one thread; PyTorch 2.6.0+cu124",
+      "denominator": null,
+      "note": ""
+    },
+    "tt.scenario_fault_benign": {
+      "value": 75,
+      "denominator": null,
+      "note": "Co-occurring-change proxy; decoy health has not been independently adjudicated"
+    },
+    "tt.scenario_fault_change": {
+      "value": 216,
+      "denominator": null,
+      "note": "Screened T1-T4 family count; causal relevance not independently adjudicated"
+    },
+    "tt.scenario_fault_nochange": {
+      "value": 0,
+      "denominator": null,
+      "note": "No observed service endpoint/pod/version change; source-defined proxy"
+    },
+    "tt.scenario_multi_change": {
+      "value": 18,
+      "denominator": null,
+      "note": "More than one observed changed service; categories may overlap"
+    },
+    "tt.scenario_samechange": {
+      "value": 30,
+      "denominator": null,
+      "note": "Exploratory exact aggregate observed-change match; benign matches reused; not an independently adjudicated matched causal cohort"
+    },
+    "tt.screened_n": {
+      "value": 306,
+      "denominator": null,
+      "note": "Topology/evidence screening, not independent causal adjudication"
+    },
+    "tt.seeds_splits": {
+      "value": "Training: 42, 123, 456, 789, 2024; split: 42, 137, 2026",
+      "denominator": null,
+      "note": ""
+    },
+    "tt.services_nodes": {
+      "value": "65 / 131",
+      "denominator": 216,
+      "note": "Builder service nodes / total graph nodes in the screened T1-T4 release"
+    },
+    "tt.shortcut_fault_benign_change_h1": {
+      "value": "0.00",
+      "denominator": 75,
+      "note": "Exploratory observed-change proxy; total rows=75; scored denominator excludes null ranking outcomes; no independent healthy-decoy adjudication"
+    },
+    "tt.shortcut_fault_benign_decoy_rate": {
+      "value": "100.00/98.67/100.00 (n=75)",
+      "denominator": 75,
+      "note": "Change/Node/DY protocol-decoy nomination percentages; no independent physical-health claim"
+    },
+    "tt.shortcut_fault_benign_dy_h1": {
+      "value": "0.00",
+      "denominator": 75,
+      "note": "Exploratory observed-change proxy; total rows=75; scored denominator excludes null ranking outcomes; no independent healthy-decoy adjudication"
+    },
+    "tt.shortcut_fault_benign_node_h1": {
+      "value": "0.00",
+      "denominator": 75,
+      "note": "Exploratory observed-change proxy; total rows=75; scored denominator excludes null ranking outcomes; no independent healthy-decoy adjudication"
+    },
+    "tt.shortcut_fault_nochange_change_h1": {
+      "value": "n/a (n=0)",
+      "denominator": 0,
+      "note": ""
+    },
+    "tt.shortcut_fault_nochange_decoy_rate": {
+      "value": "n/a (n=0)",
+      "denominator": 0,
+      "note": ""
+    },
+    "tt.shortcut_fault_nochange_dy_h1": {
+      "value": "n/a (n=0)",
+      "denominator": 0,
+      "note": ""
+    },
+    "tt.shortcut_fault_nochange_node_h1": {
+      "value": "n/a (n=0)",
+      "denominator": 0,
+      "note": ""
+    },
+    "tt.shortcut_multi_change_change_h1": {
+      "value": "0.00",
+      "denominator": 16,
+      "note": "Exploratory observed-change proxy; total rows=17; scored denominator excludes null ranking outcomes; no independent healthy-decoy adjudication"
+    },
+    "tt.shortcut_multi_change_decoy_rate": {
+      "value": "100.00/100.00/100.00 (n=15)",
+      "denominator": 15,
+      "note": "Change/Node/DY protocol-decoy nomination percentages; no independent physical-health claim"
+    },
+    "tt.shortcut_multi_change_dy_h1": {
+      "value": "0.00",
+      "denominator": 16,
+      "note": "Exploratory observed-change proxy; total rows=17; scored denominator excludes null ranking outcomes; no independent healthy-decoy adjudication"
+    },
+    "tt.shortcut_multi_change_node_h1": {
+      "value": "0.00",
+      "denominator": 16,
+      "note": "Exploratory observed-change proxy; total rows=17; scored denominator excludes null ranking outcomes; no independent healthy-decoy adjudication"
+    },
+    "tt.shortcut_samechange_change_h1": {
+      "value": "0.00",
+      "denominator": 30,
+      "note": "Exploratory observed-change matching and protocol-decoy nomination; not independently healthy-decoy error"
+    },
+    "tt.shortcut_samechange_decoy_rate": {
+      "value": "100.00/100.00/100.00 (n=30)",
+      "denominator": 30,
+      "note": "Change/Node/DY protocol-decoy nomination percentages; no independent physical-health claim"
+    },
+    "tt.shortcut_samechange_dy_h1": {
+      "value": "0.00",
+      "denominator": 30,
+      "note": "Exploratory observed-change matching and protocol-decoy nomination; not independently healthy-decoy error"
+    },
+    "tt.shortcut_samechange_node_h1": {
+      "value": "0.00",
+      "denominator": 30,
+      "note": "Exploratory observed-change matching and protocol-decoy nomination; not independently healthy-decoy error"
+    },
+    "tt.stability_baseline_delta_ci": {
+      "value": "0.0000 / [0.0000, 0.0000]",
+      "denominator": 12,
+      "note": "Configuration-macro MRR difference"
+    },
+    "tt.stability_comparator_rule": {
+      "value": "Eadro-Dyn; validation macro MRR, then Hit@1 and fixed order",
+      "denominator": null,
+      "note": ""
+    },
+    "tt.stability_macro_ci": {
+      "value": "100.00 / [100.00, 100.00]",
+      "denominator": 12,
+      "note": "Post-hoc deterministic group bootstrap of existing frozen predictions"
+    },
+    "tt.stability_split_variation": {
+      "value": "3 / 100.00 (0.00)",
+      "denominator": 3,
+      "note": "Configuration-macro Hit@1; repeats are not independent incidents"
+    },
+    "tt.stability_train_variation": {
+      "value": "5 / 100.00 (0.00)",
+      "denominator": 5,
+      "note": "Configuration-macro Hit@1; repeats are not independent incidents"
+    },
+    "tt.stability_weight_sensitivity": {
+      "value": "change 0/.10/.30; H@1 [100.00, 100.00]; MRR [1.0000, 1.0000]",
+      "denominator": 42,
+      "note": "Three fixed nominal inference-time settings; available edge channels renormalize effective shares, recorded in evidence; no selection or retuning"
+    },
+    "tt.target_configuration_coverage": {
+      "value": "10 targets / 60 frozen keys",
+      "denominator": null,
+      "note": ""
+    },
+    "tt.test_n_groups": {
+      "value": "42 / 12",
+      "denominator": null,
+      "note": "Frozen grouping key is experiment-name prefix before the last -run"
+    },
+    "tt.topology_excluded_n": {
+      "value": 24,
+      "denominator": null,
+      "note": "Topology/evidence screening, not independent causal adjudication"
+    },
+    "tt.trace_budget": {
+      "value": "10,000 scanned rows; CSV order, then window/completion filter",
+      "denominator": null,
+      "note": ""
+    },
+    "tt.train_n_groups": {
+      "value": "129 / 36",
+      "denominator": null,
+      "note": "Frozen grouping key is experiment-name prefix before the last -run"
+    },
+    "tt.truncation_rate": {
+      "value": "28.24",
+      "denominator": 216,
+      "note": "Proportion with a truncated CSV scan"
+    },
+    "tt.unrealized_n": {
+      "value": 24,
+      "denominator": null,
+      "note": "Unrealized intended topology change, not causal diagnosis"
+    },
+    "tt.unresolved_n": {
+      "value": "306 screened runs lack causal adjudication",
+      "denominator": null,
+      "note": ""
+    },
+    "tt.val_n_groups": {
+      "value": "45 / 12",
+      "denominator": null,
+      "note": "Frozen grouping key is experiment-name prefix before the last -run"
+    },
+    "tt.verification_disagreement": {
+      "value": "n/a (0 independent adjudicators)",
+      "denominator": 0,
+      "note": ""
+    },
+    "tt.verified_n": {
+      "value": "n/a (no external causal reference)",
+      "denominator": 0,
+      "note": ""
+    },
+    "tt.version_coverage": {
+      "value": "100.00",
+      "denominator": 14115,
+      "note": ""
+    },
+    "tt.window_rule": {
+      "value": "Pre/during snapshots; during cutoff; completed spans; no extra trace start bound; arrival times unavailable",
+      "denominator": null,
+      "note": ""
+    },
+    "tt.workload_rate": {
+      "value": "n/a (0 eligible frontend-rate cases)",
+      "denominator": 0,
+      "note": "pre/during topology interval, inbound frontend; not total cross-service traffic"
+    },
+    "walkthrough.case_sources": {
+      "value": "t4-checkoutservice-v2w30d200-runbatch-20260930-115905-t186-a1; first held-out T4; unperturbed; topology:52a5f601f44dd, topology:5f4def0630d08",
+      "denominator": null,
+      "note": ""
+    },
+    "walkthrough.decision": {
+      "value": "No commit; revision 0 to 0; policy llm",
+      "denominator": null,
+      "note": ""
+    },
+    "walkthrough.defect_source": {
+      "value": "Observation-only unsplit; Pod version labels present; numeric route references absent; retain unknown",
+      "denominator": null,
+      "note": ""
+    },
+    "walkthrough.failure": {
+      "value": "No execution failure; unsupported weights withheld; state retained",
+      "denominator": null,
+      "note": ""
+    },
+    "walkthrough.fidelity": {
+      "value": "Pod membership unchanged; numeric route fidelity n/a (n=0)",
+      "denominator": 0,
+      "note": ""
+    },
+    "walkthrough.preview": {
+      "value": "n/a: no proposal; no relation/rank changes",
+      "denominator": 0,
+      "note": ""
+    },
+    "walkthrough.proposal": {
+      "value": "n/a: no source-supported numeric full plan proposed",
+      "denominator": 0,
+      "note": ""
+    },
+    "walkthrough.rank": {
+      "value": "1 / 1",
+      "denominator": 1,
+      "note": ""
+    }
+  }
+}

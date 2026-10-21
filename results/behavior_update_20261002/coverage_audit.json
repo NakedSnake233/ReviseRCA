@@ -1,0 +1,26 @@
+{
+  "boutique": {
+    "cases": 297,
+    "trace_truncated": 279,
+    "metric_truncated": 0,
+    "metric_eligible": 29052,
+    "metric_unresolved": 170,
+    "C_test_n": 15,
+    "C_root_pre_trace": 5,
+    "C_root_during_trace": 15,
+    "C_root_pre_metric": 15,
+    "C_root_during_metric": 15
+  },
+  "trainticket": {
+    "cases": 291,
+    "trace_truncated": 61,
+    "metric_truncated": 0,
+    "metric_eligible": 16392,
+    "metric_unresolved": 16392,
+    "C_test_n": 15,
+    "C_root_pre_trace": 0,
+    "C_root_during_trace": 0,
+    "C_root_pre_metric": 0,
+    "C_root_during_metric": 0
+  }
+}

@@ -1,0 +1,222 @@
+observability:
+  loki_url: http://localhost:3100
+  prom_url: http://localhost:9090
+  tempo_url: http://localhost:3200
+output:
+  data_dir: data/experiments_tosem_candidate_trainticket_20260930
+  log_file: data/experiments_tosem_candidate_trainticket_20260930/batch.log
+  summary_file: data/experiments_tosem_candidate_trainticket_20260930/batch_summary.json
+scenarios:
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  description: HPA弹性扩缩容 - TrainTicket
+  id: T1
+  name: hpa_scale_trainticket
+  param_sets:
+  - cpu_load: 60
+    cpu_workers: 2
+  - cpu_load: 80
+    cpu_workers: 4
+  - cpu_load: 70
+    cpu_workers: 3
+  - cpu_load: 90
+    cpu_workers: 6
+  script: faults/T1_hpa_scale_trainticket.sh
+  targets:
+  - ts-travel-service
+  - ts-travel2-service
+  - ts-order-service
+  - ts-order-other-service
+  - ts-preserve-service
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  description: Pod重建/节点漂移 - TrainTicket
+  id: T2
+  name: pod_drift_trainticket
+  param_sets:
+  - kill_count: 1
+  - kill_count: 2
+  - kill_count: 1
+  script: faults/T2_pod_drift_trainticket.sh
+  targets:
+  - ts-station-service
+  - ts-basic-service
+  - ts-order-service
+  - ts-seat-service
+  - ts-ticketinfo-service
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  description: Service Selector 标签投毒 - TrainTicket
+  id: T3
+  name: selector_poison_trainticket
+  param_sets:
+  - poison_target: ts-station-service
+    variant: redirect
+  - poison_target: ts-order-service
+    variant: redirect
+  - poison_target: ''
+    variant: empty
+  - poison_target: ts-basic-service
+    variant: redirect
+  script: faults/T3_selector_poison_trainticket.sh
+  targets:
+  - ts-basic-service
+  - ts-seat-service
+  - ts-order-service
+  - ts-ticketinfo-service
+  - ts-station-service
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  description: Canary金丝雀发布 - TrainTicket
+  id: T4
+  name: canary_release_trainticket
+  param_sets:
+  - abort_pct: 20
+    delay_ms: 200
+    v2_weight: 30
+  - abort_pct: 30
+    delay_ms: 500
+    v2_weight: 50
+  - abort_pct: 10
+    delay_ms: 100
+    v2_weight: 20
+  - abort_pct: 25
+    delay_ms: 300
+    v2_weight: 40
+  - abort_pct: 50
+    delay_ms: 1000
+    v2_weight: 10
+  script: faults/T4_canary_trainticket.sh
+  targets:
+  - ts-travel-service
+  - ts-travel2-service
+  - ts-preserve-service
+  - ts-order-service
+  - ts-food-service
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  id: C1
+  name: counterfactual_decoy_scale
+  param_sets:
+  - decoy: auto
+    decoy2: auto
+    delay_ms: 150
+    mode: scale
+  script: faults/C_decoy_control_trainticket.sh
+  targets:
+  - ts-travel-service
+  - ts-travel2-service
+  - ts-order-service
+  - ts-order-other-service
+  - ts-preserve-service
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  id: C2
+  name: counterfactual_decoy_drift
+  param_sets:
+  - decoy: auto
+    decoy2: auto
+    delay_ms: 150
+    mode: drift
+  script: faults/C_decoy_control_trainticket.sh
+  targets:
+  - ts-travel-service
+  - ts-travel2-service
+  - ts-order-service
+  - ts-order-other-service
+  - ts-preserve-service
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  id: C3
+  name: counterfactual_decoy_redirect
+  param_sets:
+  - decoy: auto
+    decoy2: auto
+    delay_ms: 150
+    mode: redirect
+  script: faults/C_decoy_control_trainticket.sh
+  targets:
+  - ts-travel-service
+  - ts-travel2-service
+  - ts-order-service
+  - ts-order-other-service
+  - ts-preserve-service
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  id: C4
+  name: counterfactual_decoy_split
+  param_sets:
+  - decoy: auto
+    decoy2: auto
+    delay_ms: 150
+    mode: split
+  script: faults/C_decoy_control_trainticket.sh
+  targets:
+  - ts-travel-service
+  - ts-travel2-service
+  - ts-order-service
+  - ts-order-other-service
+  - ts-preserve-service
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  id: C5
+  name: counterfactual_multi_decoy_change
+  param_sets:
+  - decoy: auto
+    decoy2: auto
+    delay_ms: 150
+    mode: multi
+  script: faults/C_decoy_control_trainticket.sh
+  targets:
+  - ts-travel-service
+  - ts-travel2-service
+  - ts-order-service
+  - ts-order-other-service
+  - ts-preserve-service
+- defaults:
+    during_sec: 180
+    post_sec: 60
+    pre_sec: 30
+  id: C6
+  name: benign_dynamic_control
+  param_sets:
+  - decoy: auto
+    decoy2: auto
+    delay_ms: 0
+    mode: benign
+  script: faults/C_decoy_control_trainticket.sh
+  targets:
+  - ts-travel-service
+  - ts-travel2-service
+  - ts-order-service
+  - ts-order-other-service
+  - ts-preserve-service
+settings:
+  cooldown_seconds: 30
+  health_check_timeout: 180
+  allow_hpa_pending: true
+  max_retries: 1
+  project_dir: /home/user/dyrca
+  python: /home/user/anaconda3/envs/aris/bin/python
+  randomize: true
+  repeats: 3
+  require_healthy: true
+  seed: 20260930

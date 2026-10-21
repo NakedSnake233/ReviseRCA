@@ -1,0 +1,21 @@
+\begin{table}[tbp]
+\caption{Exploratory behavior-evidence update on the unchanged mixed split (Hit@1, percent). OB and TT retain 45 and 42 T incidents and 15 C controls each. All six adapters and both simple controls share the 57-field input and tag-separated weights with DY-RCA (separated). DY-RCA (coupled) alone retains the original tag channels as a paired ablation. Model settings and seed 42 are fixed.}
+\label{tab:behavior_update}
+\resultstable
+\begin{tabularx}{\linewidth}{@{}lYYYY@{}}
+\toprule
+Method & OB T & OB C & TT T & TT C\\
+\midrule
+NSigma-Dyn & 86.67 & 93.33 & 83.33 & 0.00\\
+BARO-Dyn & 20.00 & 46.67 & 7.14 & 0.00\\
+CIRCA-Dyn & 84.44 & 93.33 & 78.57 & 0.00\\
+CloudRanger-Dyn & 17.78 & 80.00 & 2.38 & 0.00\\
+Eadro-Dyn & 82.22 & 33.33 & 80.95 & 0.00\\
+HolisticRCA-Dyn & 82.22 & 0.00 & 97.62 & 0.00\\
+Change-only & 100.00 & 0.00 & 100.00 & 0.00\\
+Node-only & 97.78 & 0.00 & 85.71 & 0.00\\
+DY-RCA (coupled) & 95.56 & 20.00 & 92.86 & 0.00\\
+DY-RCA (separated) & 95.56 & 33.33 & 95.24 & 0.00\\
+\bottomrule
+\end{tabularx}
+\end{table}

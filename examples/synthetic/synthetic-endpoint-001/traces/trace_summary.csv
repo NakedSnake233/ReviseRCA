@@ -1,0 +1,3 @@
+trace_id,span_id,parent_span_id,service,start_time_unix_nano,duration_nano,status_code
+t,1,,service-a,1767225610000000000,1000000,2
+t,2,1,service-b,1767225610000100000,1000000,0

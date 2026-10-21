@@ -1,0 +1,28 @@
+# Bounded preflight only.  It is intentionally separate from the candidate
+# output root and is never merged into the verified cohort.
+observability:
+  loki_url: http://localhost:3100
+  prom_url: http://localhost:9090
+  tempo_url: http://localhost:3200
+output:
+  data_dir: data/experiments_tosem_smoke_boutique_20260930
+  log_file: data/experiments_tosem_smoke_boutique_20260930/batch.log
+  summary_file: data/experiments_tosem_smoke_boutique_20260930/batch_summary.json
+settings:
+  cooldown_seconds: 0
+  health_check_timeout: 180
+  max_retries: 0
+  project_dir: /home/user/dyrca
+  python: /home/user/anaconda3/envs/aris/bin/python
+  randomize: true
+  repeats: 1
+  require_healthy: true
+scenarios:
+- id: T3
+  name: smoke_selector_poison
+  script: faults/T3_selector_poison.sh
+  targets: [recommendationservice]
+  param_sets:
+  - poison_target: cartservice
+    variant: redirect
+  defaults: {during_sec: 30, post_sec: 15, pre_sec: 10}

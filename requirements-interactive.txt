@@ -1,0 +1,3 @@
+-r requirements.txt
+torch>=1.13
+jsonschema>=2.6

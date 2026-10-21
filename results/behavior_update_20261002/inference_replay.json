@@ -1,0 +1,30 @@
+[
+  {
+    "application": "boutique",
+    "method": "DY-RCA+behavior",
+    "case": "c1-cartservice-scale-recommendationservice-runbatch-20260930-115948-t135-a1",
+    "max_score_delta": 0.0,
+    "rank_equal": true
+  },
+  {
+    "application": "boutique",
+    "method": "DY-RCA+behavior-separated",
+    "case": "c1-cartservice-scale-recommendationservice-runbatch-20260930-115948-t135-a1",
+    "max_score_delta": 0.0,
+    "rank_equal": true
+  },
+  {
+    "application": "trainticket",
+    "method": "DY-RCA+behavior",
+    "case": "c1-ts-order-other-service-scale-ts-route-plan-service-runbatch-20260930-190012-t117-a1",
+    "max_score_delta": 0.0,
+    "rank_equal": true
+  },
+  {
+    "application": "trainticket",
+    "method": "DY-RCA+behavior-separated",
+    "case": "c1-ts-order-other-service-scale-ts-route-plan-service-runbatch-20260930-190012-t117-a1",
+    "max_score_delta": 0.0,
+    "rank_equal": true
+  }
+]

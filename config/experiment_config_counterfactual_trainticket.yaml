@@ -1,0 +1,64 @@
+# Counterfactual controls for TrainTicket.
+settings:
+  repeats: 3
+  seed: 20260929
+  randomize: true
+  max_retries: 2
+  cooldown_seconds: 10
+  python: /home/user/anaconda3/envs/aris/bin/python
+  project_dir: /home/user/dyrca
+  health_check_timeout: 300
+
+observability:
+  prom_url: http://localhost:9090
+  loki_url: http://localhost:3100
+  tempo_url: http://localhost:3200
+
+output:
+  data_dir: data/experiments_counterfactual_trainticket_20260929
+  summary_file: data/experiments_counterfactual_trainticket_20260929/batch_summary.json
+  log_file: data/experiments_counterfactual_trainticket_20260929/batch.log
+
+scenarios:
+  - id: C1
+    name: counterfactual_decoy_scale
+    script: faults/C_decoy_control_trainticket.sh
+    targets: [ts-travel-service, ts-travel2-service, ts-order-service, ts-order-other-service, ts-preserve-service]
+    param_sets:
+      - {mode: scale, decoy: auto, decoy2: auto, delay_ms: 150}
+    defaults: {during_sec: 60, post_sec: 30, pre_sec: 30}
+  - id: C2
+    name: counterfactual_decoy_drift
+    script: faults/C_decoy_control_trainticket.sh
+    targets: [ts-travel-service, ts-travel2-service, ts-order-service, ts-order-other-service, ts-preserve-service]
+    param_sets:
+      - {mode: drift, decoy: auto, decoy2: auto, delay_ms: 150}
+    defaults: {during_sec: 60, post_sec: 30, pre_sec: 30}
+  - id: C3
+    name: counterfactual_decoy_redirect
+    script: faults/C_decoy_control_trainticket.sh
+    targets: [ts-travel-service, ts-travel2-service, ts-order-service, ts-order-other-service, ts-preserve-service]
+    param_sets:
+      - {mode: redirect, decoy: auto, decoy2: auto, delay_ms: 150}
+    defaults: {during_sec: 60, post_sec: 30, pre_sec: 30}
+  - id: C4
+    name: counterfactual_decoy_split
+    script: faults/C_decoy_control_trainticket.sh
+    targets: [ts-travel-service, ts-travel2-service, ts-order-service, ts-order-other-service, ts-preserve-service]
+    param_sets:
+      - {mode: split, decoy: auto, decoy2: auto, delay_ms: 150}
+    defaults: {during_sec: 60, post_sec: 30, pre_sec: 30}
+  - id: C5
+    name: counterfactual_multi_decoy_change
+    script: faults/C_decoy_control_trainticket.sh
+    targets: [ts-travel-service, ts-travel2-service, ts-order-service, ts-order-other-service, ts-preserve-service]
+    param_sets:
+      - {mode: multi, decoy: auto, decoy2: auto, delay_ms: 150}
+    defaults: {during_sec: 60, post_sec: 30, pre_sec: 30}
+  - id: C6
+    name: benign_dynamic_control
+    script: faults/C_decoy_control_trainticket.sh
+    targets: [ts-travel-service, ts-travel2-service, ts-order-service, ts-order-other-service, ts-preserve-service]
+    param_sets:
+      - {mode: benign, decoy: auto, decoy2: auto, delay_ms: 0}
+    defaults: {during_sec: 60, post_sec: 30, pre_sec: 30}

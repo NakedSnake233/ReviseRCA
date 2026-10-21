@@ -1,0 +1,42 @@
+# ============================================================
+# Tempo Helm values
+# Chart: grafana/tempo
+# ============================================================
+# Tempo default config already includes:
+#   OTLP receiver on :4317 (gRPC) and :4318 (HTTP)
+#   Server HTTP on :3200 (query API)
+# ============================================================
+
+persistence:
+  enabled: true
+  size: 5Gi
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    memory: 512Mi
+
+# Ensure the Service exposes both OTLP (4317) and query (3200) ports
+service:
+  type: ClusterIP
+
+# Tempo structured config override (merged with defaults)
+# Only needed if OTLP receiver is NOT enabled by default in your chart version.
+# Uncomment the block below if traces are not being received.
+#
+# tempo:
+#   structuredConfig:
+#     distributor:
+#       receivers:
+#         otlp:
+#           protocols:
+#             grpc:
+#               endpoint: 0.0.0.0:4317
+#             http:
+#               endpoint: 0.0.0.0:4318
+
+# Enable metrics generator for span-to-metrics correlation
+metricsGenerator:
+  enabled: false  # Enable later if needed; adds resource overhead

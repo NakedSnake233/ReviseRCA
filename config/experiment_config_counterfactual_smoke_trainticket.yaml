@@ -1,0 +1,24 @@
+settings:
+  repeats: 1
+  seed: 20260929
+  randomize: false
+  max_retries: 0
+  cooldown_seconds: 2
+  python: /home/user/anaconda3/envs/aris/bin/python
+  project_dir: /home/user/dyrca
+  health_check_timeout: 300
+observability:
+  prom_url: http://localhost:9090
+  loki_url: http://localhost:3100
+  tempo_url: http://localhost:3200
+output:
+  data_dir: data/experiments_counterfactual_smoke_trainticket_20260929
+  summary_file: data/experiments_counterfactual_smoke_trainticket_20260929/batch_summary.json
+  log_file: data/experiments_counterfactual_smoke_trainticket_20260929/batch.log
+scenarios:
+  - {id: C1, name: smoke_scale, script: faults/C_decoy_control_trainticket.sh, targets: [ts-travel-service], param_sets: [{mode: scale, decoy: auto, decoy2: auto, delay_ms: 150}], defaults: {during_sec: 20, post_sec: 10, pre_sec: 15}}
+  - {id: C2, name: smoke_drift, script: faults/C_decoy_control_trainticket.sh, targets: [ts-travel2-service], param_sets: [{mode: drift, decoy: auto, decoy2: auto, delay_ms: 150}], defaults: {during_sec: 20, post_sec: 10, pre_sec: 15}}
+  - {id: C3, name: smoke_redirect, script: faults/C_decoy_control_trainticket.sh, targets: [ts-order-service], param_sets: [{mode: redirect, decoy: auto, decoy2: auto, delay_ms: 150}], defaults: {during_sec: 20, post_sec: 10, pre_sec: 15}}
+  - {id: C4, name: smoke_split, script: faults/C_decoy_control_trainticket.sh, targets: [ts-order-other-service], param_sets: [{mode: split, decoy: auto, decoy2: auto, delay_ms: 150}], defaults: {during_sec: 20, post_sec: 10, pre_sec: 15}}
+  - {id: C5, name: smoke_multi, script: faults/C_decoy_control_trainticket.sh, targets: [ts-preserve-service], param_sets: [{mode: multi, decoy: auto, decoy2: auto, delay_ms: 150}], defaults: {during_sec: 20, post_sec: 10, pre_sec: 15}}
+  - {id: C6, name: smoke_benign, script: faults/C_decoy_control_trainticket.sh, targets: [ts-travel-service], param_sets: [{mode: benign, decoy: auto, decoy2: auto, delay_ms: 0}], defaults: {during_sec: 20, post_sec: 10, pre_sec: 15}}
