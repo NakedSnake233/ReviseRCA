@@ -5,11 +5,10 @@ contains the graph/evidence revision engine, the offline workbench, fixed-parame
 RCA experiments, six shared-input baseline adapters, collection tooling, and tests
 for Online Boutique and Train Ticket.
 
-## Quick start (offline, CPU)
+## Quick start
 
 Use Linux and Python 3.10 or newer. The retained experiment environment used
-Python 3.10.4 and PyTorch 2.6.0+cu124; the reported operation timings used **one CPU
-thread**, not GPU execution. CUDA is not required for the offline workflow.
+Python 3.10.4 and PyTorch 2.6.0+cu124.
 
 ```bash
 python -m venv .venv
@@ -24,10 +23,7 @@ python -m dyrca_rca.experiments.run_interactive \
   --limit 1 --max-rows 100 --seed 42 --planner rule
 ```
 
-The smoke packet is deliberately synthetic. It checks observation loading, graph
-construction, and persisted revision artifacts; it does **not** reproduce paper
-accuracy or train a diagnosis model. No credentials, cluster, or network calls are
-needed for these checks.
+
 
 ## Contents
 
