@@ -42,23 +42,3 @@ python -m dyrca_rca.experiments.run_interactive \
 | `validation/` | Validation receipts from the packaged checkout |
 | `SOURCE_MANIFEST.json` | Original and packaged source hashes (identical) |
 
-## Scope of the released evidence
-
-The original temporal-v3 results and the 57-field behavior extension are **different
-experimental versions**. The extension is a post-hoc, single-seed mixed-cohort
-experiment. It improves Online Boutique control Hit@1 from 1/15 to 5/15, but two
-adapters achieve 14/15; Train Ticket remains at 0/15. These results do not establish
-overall superiority. The simulated SRE uses an LLM agent, not human participants.
-
-Raw telemetry, large tensor caches, checkpoints, private configurations, credentials,
-third-party source clones, and manuscript drafts are not included. Full numerical
-reproduction needs the original dataset and receipt-bound release/cache artifacts
-listed in the reproduction guide. The repository is a code supplement, not a claim
-that the full experimental dataset has been publicly released.
-
-The historical scripts retain environment-specific paths and some manipulate
-Kubernetes resources; review and adapt their paths/configuration before explicitly
-running them on a dedicated test cluster. None runs automatically during setup.
-
-No new license grant is asserted by this packaging operation. See the third-party
-notice; upstream code is linked rather than redistributed.
